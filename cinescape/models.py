@@ -24,7 +24,7 @@ class Movies(models.Model):
     def __str__(self):
         return self.name 
 
-class Location(models):
+class Location(models.Model):
     geolocation = models.CharField(_MAX_LENGTH=250)
     area_name = models.CharField(_MAX_LENGTH=50)
     address_one = models.CharField(_MAX_LENGTH=250)
@@ -33,7 +33,7 @@ class Location(models):
     def __str__(self):
         return self.name
 
-class Theater(Model.models):
+class Theater(models.Model):
     name = models.CharField(_MAX_LENGTH=50)
     capacity = models.PositiveIntegerField()
     booked_seats = models.PositiveIntegerField()
@@ -41,6 +41,6 @@ class Theater(Model.models):
     def __str__(self):
         return self.name 
 
-    @property
+    #@property
     def check_availablity(self):
         return self.capacity > self.booked_seats
